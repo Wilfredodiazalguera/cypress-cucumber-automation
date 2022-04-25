@@ -1,0 +1,9 @@
+{
+  "testFiles": "**/*.feature",
+  "chromeWebSecurity": false,
+  "baseUrl": "https://www.saucedemo.com/",
+  "retries": {
+    "runMode": 1,
+    "openMode": 2
+  }
+}
