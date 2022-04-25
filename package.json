@@ -4,8 +4,8 @@
    "description": "",
    "main": "index.js",
    "scripts": {
-      "test": "npx cypress open",
-      "testcli": "npx cypress run --headless --browser chrome"
+      "test": "npx cypress open && node cucumber-html-report.js",
+      "testcli": "npx cypress run --headless --browser chrome && node cucumber-html-report.js"
    },
    "keywords": [],
    "author": "",
@@ -13,9 +13,16 @@
    "devDependencies": {
       "cypress": "^9.5.4",
       "cypress-cucumber-preprocessor": "^4.3.1",
+      "multiple-cucumber-html-reporter": "^1.20.0",
       "prettier": "^2.6.2"
    },
    "cypress-cucumber-preprocessor": {
-      "nonGlobalStepDefinitions": true
+      "nonGlobalStepDefinitions": true,
+      "cucumberJson": {
+         "generate": true,
+         "outputFolder": "cypress/cucumber-json",
+         "filePrefix": "",
+         "fileSuffix": ".cucumber"
+      }
    }
 }

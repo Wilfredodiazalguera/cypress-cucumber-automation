@@ -4,10 +4,19 @@ Given("Im on login page", () => {
    cy.visitLoginPage();
 });
 
-When("I login", () => {
+When("I login with valid credentials", () => {
    cy.loginWith({ user: "standard_user", password: "secret_sauce" });
 });
 
-Then("The page url is on inventory", () => {
+When("I login with invalid credentials", () => {
+   cy.loginWith({ user: "standard_user", password: "badpassword" });
+   cy.loginWith({ user: "invalid_user", password: "secret_sauce" });
+});
+
+Then("The page url is on inventory page", () => {
    cy.url().should("eq", "https://www.saucedemo.com/inventory.html");
+});
+
+Then("Page show an error message", () => {
+   cy.invalidCredentialsErrorIsShown();
 });
