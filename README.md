@@ -26,7 +26,7 @@ npm i
 
 ```
 npm run test        // run test with cypress UI
-npm run testcli     // run test with cypress UI
+npm run testcli     // run test with cypress CLI
 ```
 
 ### License
