@@ -1,4 +1,4 @@
-Feature: Login
+Feature: Login tests
 
     Scenario: Successful login
         Given Im on login page
