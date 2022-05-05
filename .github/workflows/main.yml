@@ -18,6 +18,6 @@ jobs:
            with:
               name: cucumber report
               path: reports/index.html
-          - name: Download all workflow run artifacts
+         - name: Download all workflow run artifacts
               uses: actions/download-artifact@v3
 
