@@ -25,7 +25,7 @@ jobs:
          - name: Archive cucumber reporter
            uses: actions/upload-artifact@v3
            with:
-              name: cucumber report
+              name: cucumber report ${{ matrix.os }}
               path: reports/
          - name: Download all workflow run artifacts
            uses: actions/download-artifact@v3
