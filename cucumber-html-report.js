@@ -4,13 +4,13 @@ report.generate({
    reportPath: "./reports",
    metadata: {
       browser: {
-         name: "chrome",
-         version: "100",
+         name: " Electron 94",
+         version: "94",
       },
-      device: "Local test machine",
+      device: "Github actions",
       platform: {
-         name: "windows",
-         version: "10",
+         name: "ubuntu-latest",
+         version: "latest",
       },
    },
 });
