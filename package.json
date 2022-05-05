@@ -6,7 +6,7 @@
    "scripts": {
       "test": "npx cypress open && node cucumber-html-report.js",
       "report": "node cucumber-html-report.js",
-      "testfirefox": "npx cypress run --headless --browser firefox && node cucumber-html-report.js",
+      "testreport": "npx cypress run && node cucumber-html-report.js",
       "testcli": "npx cypress run"
    },
    "keywords": [],

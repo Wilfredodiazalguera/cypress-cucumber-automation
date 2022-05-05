@@ -10,24 +10,39 @@
 
 ---
 
-## Project made from scratch to perform automated front-end testing using cucumber as an additional framework to use BDD
+> ### Project made from scratch to perform automated front-end testing using cucumber as an additional framework to use BDD
 
 ---
 
-### Installation
+## Installation
 
-Use the package manager npm [nodejs](https://nodejs.org/en/) to install the framework.
+> Use the package manager npm [nodejs](https://nodejs.org/en/) to install the framework.
 
 ```
 npm i
 ```
 
-### How to use it
+## How to use it
 
 ```
-npm run test        // run test with cypress UI
-npm run testcli     // run test with cypress CLI
+npm run test        // Run test with cypress UI
+npm run testcli     // Run test with cypress CLI
+npm run testreport  // Run test with cypress CLI and reporter
 ```
+
+## Reporter
+
+### Reporter on local machine
+
+```
+npm run testreport  // Run test with cypress CLI and reporter
+```
+
+> After run the reporter command go to reports folder and open index.html file
+
+### Reporter on Github actions
+
+> After run finish go to artifacts and download the reports file, unzip the file and open index.html file
 
 ### License
 

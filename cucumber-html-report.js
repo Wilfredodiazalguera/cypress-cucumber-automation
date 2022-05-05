@@ -5,9 +5,9 @@ report.generate({
    metadata: {
       browser: {
          name: "Electron 94",
-         version: "94",
+         version: "Electron 94",
       },
-      device: "Github actions",
+      device: "Windows and Linux",
       platform: {
          name: "ubuntu and windows",
          version: "latest",
