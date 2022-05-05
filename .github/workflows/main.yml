@@ -3,13 +3,21 @@ name: Cypress Tests
 on: [push]
 
 jobs:
-  cypress-run:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          build: npm install
-          start: npm run testcli
+   cypress-run:
+      runs-on: ubuntu-latest
+      steps:
+         - name: Checkout
+           uses: actions/checkout@v2
+         - name: Cypress run
+           uses: cypress-io/github-action@v2
+           with:
+              build: npm install
+              start: npm run testcli
+         - name: Archive cucumber reporter
+           uses: actions/upload-artifact@v3
+           with:
+              name: cucumber report
+              path: reports/index.html
+          - name: Download all workflow run artifacts
+              uses: actions/download-artifact@v3
+
