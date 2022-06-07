@@ -6,7 +6,7 @@
 ![](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 ![](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 
-# Cypress framework using cucumber BDD
+# Cypress.io using cucumber BDD and GitHub Actions
 
 ---
 
@@ -16,7 +16,7 @@
 
 ## Installation
 
-> Use the package manager npm [nodejs](https://nodejs.org/en/) to install the framework.
+> Use the package manager npm [nodejs](https://nodejs.org/en/) to install the framework and dependencies
 
 ```
 npm i
@@ -43,6 +43,22 @@ npm run testreport  // Run test with cypress CLI and reporter
 ### Reporter on Github actions
 
 > After run finish go to artifacts and download the reports file, unzip the file and open index.html file
+
+## Patter Design implemented (Cypress.io + Cucumber)
+
+### Methods and functions
+
+> Methods and selectors are on support/ and can be accesable by any file, also there one file by each page to structure in a better way the code similir to POM
+
+> Commands.js file is a general file where you can add the general commands and selectors for all the project.
+
+### Logic cucumber implementation
+
+> The code logic is on integration/folder/file, is the file (js) where we call the methods to implement on each feature file.
+
+### Test files (Feature files)
+
+> The featurte file contains the Gherkin tests.
 
 ### License
 
