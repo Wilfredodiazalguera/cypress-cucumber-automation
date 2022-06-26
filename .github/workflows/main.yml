@@ -28,6 +28,7 @@ jobs:
            if: always()
            run: npm run report
          - name: Archive cucumber reporter
+           if: always()
            uses: actions/upload-artifact@v3
            with:
               name: cucumber report ${{ matrix.os }}
