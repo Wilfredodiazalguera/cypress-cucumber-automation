@@ -1,5 +1,6 @@
 #Folders
 /node_modules
 /cypress/videos
+/cypress/screenshots
 /reports
 /cypress/cucumber-json

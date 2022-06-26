@@ -16,24 +16,44 @@ jobs:
       steps:
          - name: Checkout
            uses: actions/checkout@v3
+
          - name: Use Node.js
            uses: actions/setup-node@v3
            with:
               node-version: "16.x"
-         - name: Cypress run
+
+         - name: Running cypress
+           id: runningcypress
            uses: cypress-io/github-action@v2
            with:
               build: npm install
               start: npm run testcli
-         - name: Generate report
+
+         - name: Generate Cucumber report
            if: always()
            run: npm run report
-         - name: Archive cucumber reporter
+
+         - name: Save Cucumber reporter
            if: always()
            uses: actions/upload-artifact@v3
            with:
-              name: cucumber report ${{ matrix.os }}
+              name: Cucumber report ${{ matrix.os }}
               path: reports/
+
+         - name: Save screenshots report
+           if: steps.runningcypress.outcome == 'failure'
+           uses: actions/upload-artifact@v3
+           with:
+              name: Screenshots report ${{ matrix.os }}
+              path: cypress/screenshots
+
+         - name: Save video report
+           if: steps.runningcypress.outcome == 'failure'
+           uses: actions/upload-artifact@v3
+           with:
+              name: Video report ${{ matrix.os }}
+              path: cypress/videos
+
          - name: Download all workflow run artifacts
            if: always()
            uses: actions/download-artifact@v3
