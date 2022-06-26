@@ -16,3 +16,12 @@ Cypress.Commands.add("visitLoginPage", () => {
 Cypress.Commands.add("invalidCredentialsErrorIsShown", () => {
    cy.get(error_message_text).should("be.visible");
 });
+
+Cypress.Commands.add("loginButtonisDisplayed", () => {
+   cy.get(login_button).should("be.visible");
+});
+
+Cypress.Commands.add("checkAccessibility", () => {
+   cy.injectAxe();
+   cy.checkA11y();
+});

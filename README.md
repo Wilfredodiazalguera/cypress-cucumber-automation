@@ -48,7 +48,7 @@ npm run testreport  // Run test with cypress CLI and reporter
 
 ### Methods and functions
 
-> Methods and selectors are on support/ and can be accesable by any file, also there one file by each page to structure in a better way the code similir to POM
+> Methods and selectors are on support/ and can be accesable by any file, also there one file by each page to structure in a better way the code similar to POM
 
 > Commands.js file is a general file where you can add the general commands and selectors for all the project.
 

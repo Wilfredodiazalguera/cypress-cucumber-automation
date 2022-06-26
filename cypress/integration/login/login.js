@@ -13,10 +13,18 @@ When("I login with invalid credentials", () => {
    cy.loginWith({ user: "invalid_user", password: "secret_sauce" });
 });
 
+When("The login page loads", () => {
+   cy.loginButtonisDisplayed();
+});
+
 Then("The page url is on inventory page", () => {
    cy.url().should("eq", "https://www.saucedemo.com/inventory.html");
 });
 
 Then("Page show an error message", () => {
    cy.invalidCredentialsErrorIsShown();
+});
+
+Then("Axe checks the accessibility", () => {
+   cy.checkAccessibility();
 });
