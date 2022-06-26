@@ -1,6 +1,10 @@
 name: Cypress Tests
 
-on: [push]
+on:
+   push:
+      branches:
+         - main
+         - develop
 
 jobs:
    cypress-run:
@@ -21,6 +25,7 @@ jobs:
               build: npm install
               start: npm run testcli
          - name: Generate report
+           if: always()
            run: npm run report
          - name: Archive cucumber reporter
            uses: actions/upload-artifact@v3
@@ -28,4 +33,5 @@ jobs:
               name: cucumber report ${{ matrix.os }}
               path: reports/
          - name: Download all workflow run artifacts
+           if: always()
            uses: actions/download-artifact@v3
