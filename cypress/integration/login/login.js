@@ -25,6 +25,6 @@ Then("Page show an error message", () => {
    cy.invalidCredentialsErrorIsShown();
 });
 
-Then("Axe checks the accessibility", () => {
+Then("Checks the accessibility", () => {
    cy.checkAccessibility();
 });

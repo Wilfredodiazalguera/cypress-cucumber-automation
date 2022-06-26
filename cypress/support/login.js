@@ -20,8 +20,3 @@ Cypress.Commands.add("invalidCredentialsErrorIsShown", () => {
 Cypress.Commands.add("loginButtonisDisplayed", () => {
    cy.get(login_button).should("be.visible");
 });
-
-Cypress.Commands.add("checkAccessibility", () => {
-   cy.injectAxe();
-   cy.checkA11y();
-});

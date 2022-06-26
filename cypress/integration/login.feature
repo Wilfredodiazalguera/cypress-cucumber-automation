@@ -1,9 +1,9 @@
 Feature: Login tests
 
-    Scenario: Accessibility test on Login
+    Scenario: Accessibility test on Login page (WCAG2AA)
         Given Im on login page
         When The login page loads
-        Then Axe checks the accessibility
+        Then Checks the accessibility
 
     Scenario: Successful login
         Given Im on login page
