@@ -9,7 +9,7 @@ Cypress.Commands.add("checkAccessibility", (context = null) => {
    cy.checkA11y(context, {
       runOnly: {
          type: "tag",
-         values: ["wcag2aaa"],
+         values: ["wcag2aa"],
       },
    });
 });
