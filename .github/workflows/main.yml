@@ -41,14 +41,14 @@ jobs:
               path: reports/
 
          - name: Save screenshots report
-           if: steps.runningcypress.outcome == 'failure'
+           if: steps.runningcypress.result  == 'failure'
            uses: actions/upload-artifact@v3
            with:
               name: Screenshots report ${{ matrix.os }}
               path: cypress/screenshots
 
          - name: Save video report
-           if: steps.runningcypress.outcome == 'failure'
+           if: steps.runningcypress.result  == 'failure'
            uses: actions/upload-artifact@v3
            with:
               name: Video report ${{ matrix.os }}
