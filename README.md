@@ -48,17 +48,17 @@ npm run testreport  // Run test with cypress CLI and reporter
 
 ### Methods and functions
 
-> Methods and selectors are on support/ and can be accesable by any file, also there one file by each page to structure in a better way the code similar to POM
+> Methods and selectors are on support folder and can be accesable by any file, there are one file for each page (The file should contains selectors and commands/methods)
 
-> Commands.js file is a general file where you can add the general commands and selectors for all the project.
+> Commands.js file is a general file where you can add the general commands and selectors for all the project. (like base commands/methods)
 
 ### Logic cucumber implementation
 
-> The code logic is on integration/folder/file, is the file (js) where we call the methods to implement on each feature file.
+> The implementation of logic is on integration/folder/file, file (js) where we call the commands/methods to implement on each feature file.
 
 ### Test files (Feature files)
 
-> The featurte file contains the Gherkin tests.
+> The feature file contains the Gherkin steps tests.
 
 ### License
 

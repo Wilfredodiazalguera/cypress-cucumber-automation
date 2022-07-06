@@ -1,10 +1,10 @@
-let swaglabs_logo = ".app_logo";
-let products_title = ".title";
-let add_to_cart = ".btn_inventory";
-let remove_button = "#remove-sauce-labs-backpack";
-let shopping_cart_icon = "a.shopping_cart_link span";
-let item_price = ".inventory_item_price";
-let item_description = ".inventory_item_desc";
+const swaglabs_logo = ".app_logo";
+const products_title = ".title";
+const add_to_cart = ".btn_inventory";
+const remove_button = "#remove-sauce-labs-backpack";
+const shopping_cart_icon = "a.shopping_cart_link span";
+const item_price = ".inventory_item_price";
+const item_description = ".inventory_item_desc";
 
 Cypress.Commands.add("isOnProductsPage", () => {
    cy.get(swaglabs_logo).should("be.visible");
