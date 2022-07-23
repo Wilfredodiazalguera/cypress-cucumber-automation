@@ -1,4 +1,4 @@
 import "./commands";
 import "./login";
-import "./product";
+import "./productCart";
 import "cypress-axe";
