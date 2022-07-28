@@ -8,9 +8,22 @@ module.exports = (on, config) => {
    // `config` is the resolved Cypress config
 };
 
-//Cypress cucumber integration
-const cucumber = require("cypress-cucumber-preprocessor").default;
-
-module.exports = (on, config) => {
-   on("file:preprocessor", cucumber());
+//Cypress Cucumber Integration
+const createEsbuildPlugin =
+   require("@badeball/cypress-cucumber-preprocessor/esbuild").createEsbuildPlugin;
+const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const nodePolyfills =
+   require("@esbuild-plugins/node-modules-polyfill").NodeModulesPolyfillPlugin;
+const addCucumberPreprocessorPlugin =
+   require("@badeball/cypress-cucumber-preprocessor").addCucumberPreprocessorPlugin;
+module.exports = async (on, config) => {
+   await addCucumberPreprocessorPlugin(on, config); // to allow json to be produced
+   // To use esBuild for the bundler when preprocessing
+   on(
+      "file:preprocessor",
+      createBundler({
+         plugins: [nodePolyfills(), createEsbuildPlugin(config)],
+      })
+   );
+   return config;
 };
