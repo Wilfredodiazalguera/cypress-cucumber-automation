@@ -26,6 +26,7 @@ jobs:
            id: runningcypress
            uses: cypress-io/github-action@v2
            with:
+              config-file: cypress.config.js
               build: npm install
               start: npm run testcli
 
