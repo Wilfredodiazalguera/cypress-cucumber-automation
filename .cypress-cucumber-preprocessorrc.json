@@ -1,0 +1,12 @@
+{
+   "json": {
+      "enabled": true,
+      "output": "cypress/cucumber-json/log.json",
+      "formater": "cucumber-json-formatter.exe"
+   },
+   "messages": {
+      "enabled": true,
+      "output": "cypress/cucumber-json/messages.ndjson"
+   },
+   "stepDefinitions": "cypress/e2e/**/*.{js,ts}"
+}

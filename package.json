@@ -6,29 +6,20 @@
    "scripts": {
       "test": "npx cypress open && node cucumber-html-report.js",
       "report": "node cucumber-html-report.js",
-      "testreport": "npx cypress run && node cucumber-html-report.js",
+      "testreport": "npx cypress run && npm run report",
       "testcli": "npx cypress run"
    },
    "keywords": [],
    "author": "",
    "license": "ISC",
    "devDependencies": {
+      "cypress": "^10.3.1",
       "@badeball/cypress-cucumber-preprocessor": "^11.5.1",
       "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
       "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
-      "axe-core": "^4.4.3",
-      "cypress": "^10.3.1",
       "cypress-axe": "^1.0.0",
+      "axe-core": "^4.4.3",
       "multiple-cucumber-html-reporter": "^1.20.0",
       "prettier": "^2.6.2"
-   },
-   "cypress-cucumber-preprocessor": {
-      "stepDefinitions": "cypress/e2e/**/*.{js,ts}",
-      "cucumberJson": {
-         "generate": true,
-         "outputFolder": "cypress/cucumber-json",
-         "filePrefix": "",
-         "fileSuffix": ".cucumber"
-      }
    }
 }
