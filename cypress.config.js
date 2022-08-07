@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
    chromeWebSecurity: false,
-   videoCompression: 15,
+   videoCompression: false,
    retries: {
       openMode: 2,
    },
