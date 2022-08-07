@@ -10,7 +10,7 @@ jobs:
    cypress-run:
       runs-on: ubuntu-18.04
       steps:
-         - uses: actions/checkout@master
+         - uses: actions/checkout@v3
 
          # install a specific version of Node using
          - name: Use Node.js V16
@@ -26,6 +26,7 @@ jobs:
               key: ${{ runner.os }}-node-${{ github.ref }}-${{ hashFiles('**/package-lock.json') }}
               restore-keys: |
                  ${{ runner.os }}-node-${{ github.ref }}-${{ hashFiles('**/package-lock.json') }}
+
          - name: Cache Cypress binary
            uses: actions/cache@v1
            with:
@@ -36,7 +37,7 @@ jobs:
 
          - name: Running cypress
            id: runningcypress
-           uses: cypress-io/github-action@v2
+           uses: cypress-io/github-action@v4
            with:
               config-file: cypress.config.js
               build: npm install
