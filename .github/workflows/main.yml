@@ -7,7 +7,7 @@ on:
          - testing
 
 jobs:
-   cypress-run:
+   cypresV10-run:
       runs-on: ubuntu-18.04
       steps:
          - uses: actions/checkout@v3
@@ -35,7 +35,7 @@ jobs:
               restore-keys: |
                  cypress-${{ runner.os }}-cypress-
 
-         - name: Running cypress
+         - name: Running cypress V10
            id: runningcypress
            uses: cypress-io/github-action@v4
            with:
