@@ -7,7 +7,7 @@ on:
          - testing
 
 jobs:
-   cypresV10-run:
+   cypres-V10-run-tests:
       runs-on: windows-2022
       steps:
          - uses: actions/checkout@v3
@@ -18,23 +18,7 @@ jobs:
            with:
               node-version: "16.14.2"
 
-         # Restore the previous NPM modules and Cypress binary archives.
-         - name: Cache central NPM modules
-           uses: actions/cache@v1
-           with:
-              path: ~/.npm
-              key: ${{ runner.os }}-node-${{ github.ref }}-${{ hashFiles('**/package-lock.json') }}
-              restore-keys: |
-                 ${{ runner.os }}-node-${{ github.ref }}-${{ hashFiles('**/package-lock.json') }}
-
-         - name: Cache Cypress binary
-           uses: actions/cache@v1
-           with:
-              path: ~/.cache/Cypress
-              key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/package.json') }}
-              restore-keys: |
-                 cypress-${{ runner.os }}-cypress-
-
+         # install and Run Cypress
          - name: Running cypress V10
            id: runningcypress
            uses: cypress-io/github-action@v4
