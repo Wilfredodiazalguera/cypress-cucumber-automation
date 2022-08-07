@@ -8,19 +8,31 @@ on:
 
 jobs:
    cypress-run:
-      runs-on: ${{ matrix.os }}
-      strategy:
-         matrix:
-            os: [windows-latest]
-         fail-fast: false
+      runs-on: ubuntu-18.04
       steps:
-         - name: Checkout
-           uses: actions/checkout@v3
+         - uses: actions/checkout@master
 
-         - name: Use Node.js
+         # install a specific version of Node using
+         - name: Use Node.js V16
            uses: actions/setup-node@v3
            with:
-              node-version: "14.14.0"
+              node-version: "16.14.2"
+
+         # Restore the previous NPM modules and Cypress binary archives.
+         - name: Cache central NPM modules
+           uses: actions/cache@v1
+           with:
+              path: ~/.npm
+              key: ${{ runner.os }}-node-${{ github.ref }}-${{ hashFiles('**/package-lock.json') }}
+              restore-keys: |
+                 ${{ runner.os }}-node-${{ github.ref }}-${{ hashFiles('**/package-lock.json') }}
+         - name: Cache Cypress binary
+           uses: actions/cache@v1
+           with:
+              path: ~/.cache/Cypress
+              key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/package.json') }}
+              restore-keys: |
+                 cypress-${{ runner.os }}-cypress-
 
          - name: Running cypress
            id: runningcypress
@@ -45,14 +57,14 @@ jobs:
            if: failure() && steps.runningcypress.outcome != 'success'
            uses: actions/upload-artifact@v3
            with:
-              name: Screenshots report ${{ matrix.os }}
+              name: Screenshots report
               path: cypress/screenshots
 
          - name: Save video report
            if: failure() && steps.runningcypress.outcome != 'success'
            uses: actions/upload-artifact@v3
            with:
-              name: Video report ${{ matrix.os }}
+              name: Video report
               path: cypress/videos
 
          - name: Download all workflow run artifacts
