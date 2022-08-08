@@ -24,27 +24,28 @@ jobs:
            uses: cypress-io/github-action@v4
            with:
               config-file: cypress.config.js
-              build: npm install
+              browser: chrome
+              headed: true
 
-         - name: Generate Cucumber report
+         - name: Generate Cucumber Report
            if: always()
            run: npm run report
 
-         - name: Save Cucumber reporter
+         - name: Save Cucumber Report
            if: always()
            uses: actions/upload-artifact@v3
            with:
               name: Cucumber report ${{ matrix.os }}
               path: reports/
 
-         - name: Save screenshots report
+         - name: Save Screenshots Report
            if: failure() && steps.runningcypress.outcome != 'success'
            uses: actions/upload-artifact@v3
            with:
               name: Screenshots report
               path: cypress/screenshots
 
-         - name: Save video report
+         - name: Save Video Report
            if: failure() && steps.runningcypress.outcome != 'success'
            uses: actions/upload-artifact@v3
            with:
