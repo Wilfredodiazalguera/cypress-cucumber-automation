@@ -7,7 +7,7 @@ on:
          - testing
 
 jobs:
-   cypres-V10-run-tests:
+   Cypress-v10-run-tests:
       runs-on: windows-2022
       steps:
          - uses: actions/checkout@v3
@@ -25,6 +25,8 @@ jobs:
            with:
               config-file: cypress.config.js
               build: npm install
+              browser: chrome
+              headed: true
               start: npm run testcli
 
          - name: Generate Cucumber report

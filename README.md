@@ -6,7 +6,7 @@
 ![](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 ![](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 
-# Cypress.io 10 using cucumber BDD and GitHub Actions
+# Cypress.io 10 using Cucumber BDD and GitHub Actions
 
 ---
 
@@ -25,9 +25,9 @@ npm i
 ## How to use it
 
 ```
-npm run test        // Run test with cypress UI
-npm run testcli     // Run test with cypress CLI
-npm run testreport  // Run test with cypress CLI and reporter
+npm run test        // Run tests with cypress UI
+npm run testcli     // Run tests with cypress CLI
+npm run testreport  // Run tests with cypress CLI and reporter
 ```
 
 ## Reporter
@@ -46,19 +46,19 @@ npm run testreport  // Run test with cypress CLI and reporter
 
 ## Patter Design implemented (Cypress.io + Cucumber)
 
-### Methods and functions
+### Methods/functions and Selectors
 
-> Methods and selectors are on support folder and can be accesable by any file, there are one file for each page (The file should contains selectors and commands/methods) (Pages files)
+> Methods and selectors are on support/ folder and can be accesable by any file, there are one file for each page (The file should contains selectors and commands/methods) (Pages files)
 
 > Commands.js file is a general file where you can add the general commands and selectors for all the project. (like base commands/methods)
 
 ### Logic cucumber implementation
 
-> The implementation of logic is on e2e/cucumberStepsDef/.js, file (js) where we call the commands/methods to implement on each feature file.
+> The implementation of logic is on cypress/e2e/cucumberStepsDef/.js, where we call the commands/methods to implement on each feature file.
 
 ### Test files (Feature files)
 
-> The feature file contains the Gherkin steps tests.
+> The feature file are in cypress/e2e/.feature cypresscontains the Gherkin steps tests.
 
 ### License
 
