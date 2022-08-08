@@ -3,9 +3,6 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
    chromeWebSecurity: false,
    videoCompression: false,
-   retries: {
-      openMode: 2,
-   },
    e2e: {
       //Cucumber preprocessor set-up
       async setupNodeEvents(on, config) {
