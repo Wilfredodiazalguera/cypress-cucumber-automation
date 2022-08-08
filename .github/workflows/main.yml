@@ -35,21 +35,21 @@ jobs:
            if: always()
            uses: actions/upload-artifact@v3
            with:
-              name: Cucumber report ${{ matrix.os }}
+              name: Cucumber Report
               path: reports/
 
          - name: Save Screenshots Report
            if: failure() && steps.runningcypress.outcome != 'success'
            uses: actions/upload-artifact@v3
            with:
-              name: Screenshots report
+              name: Screenshots Report
               path: cypress/screenshots
 
          - name: Save Video Report
            if: failure() && steps.runningcypress.outcome != 'success'
            uses: actions/upload-artifact@v3
            with:
-              name: Video report
+              name: Video Report
               path: cypress/videos
 
          - name: Download all workflow run artifacts
