@@ -25,7 +25,6 @@ jobs:
            with:
               config-file: cypress.config.js
               build: npm install
-              start: npm run testcli
 
          - name: Generate Cucumber report
            if: always()
