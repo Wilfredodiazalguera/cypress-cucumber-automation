@@ -10,10 +10,14 @@ Given("Im on inventory page", () => {
    cy.loginWith({ user: "standard_user", password: "secret_sauce" });
 });
 
-And("Go to cart page from invetory page", () => {
-   cy.goToCartPageFromInvetoryPage();
+When("The inventory page loads", () => {
+   cy.validateInventoryURL();
 });
 
-Then("I see the product details", () => {
-   cy.verifyProductDetails();
+When("I add one item to the cart", () => {
+   cy.addOneProductToCart();
+});
+
+And("Go to cart page from invetory page", () => {
+   cy.goToCartPage();
 });

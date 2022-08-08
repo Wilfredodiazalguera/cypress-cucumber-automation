@@ -18,7 +18,7 @@ When("The login page loads", () => {
 });
 
 Then("The page url is on inventory page", () => {
-   cy.url().should("eq", "https://www.saucedemo.com/inventory.html");
+   cy.validateInventoryURL();
 });
 
 Then("Page show an error message", () => {

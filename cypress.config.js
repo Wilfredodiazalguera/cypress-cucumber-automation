@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
    chromeWebSecurity: false,
-   videoCompression: false,
+   video: false,
    e2e: {
       //Cucumber preprocessor set-up
       async setupNodeEvents(on, config) {

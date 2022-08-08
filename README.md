@@ -25,18 +25,15 @@ npm i
 ## How to use it
 
 ```
-npm run test        // Run tests with cypress UI
-npm run testcli     // Run tests with cypress CLI
-npm run testreport  // Run tests with cypress CLI and reporter
+npm run test        // Run tests with Cypress UI
+npm run testcli     // Run tests with Cypress in headless mode with Chrome
 ```
 
 ## Reporter
 
 ### Reporter on local machine
 
-```
-npm run testreport  // Run test with cypress CLI and reporter
-```
+> After run _npm run test or npm run testcli_ go to /reports folder and open index.html file
 
 > After run the reporter command go to /reports folder and open index.html file
 

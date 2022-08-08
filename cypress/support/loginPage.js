@@ -1,16 +1,16 @@
-const user_name = "#user-name";
+const user_name_selector = "#user-name";
 const password_selector = "#password";
 const login_button = "#login-button";
 const error_message_text = ".error-button";
 
-Cypress.Commands.add("loginWith", ({ user, password }) => {
-   cy.typeMessage(user_name, user);
-   cy.typeMessage(password_selector, password);
-   cy.get(login_button).click();
-});
-
 Cypress.Commands.add("visitLoginPage", () => {
    cy.visit("/");
+});
+
+Cypress.Commands.add("loginWith", ({ user, password }) => {
+   cy.typeMessage(user_name_selector, user);
+   cy.typeMessage(password_selector, password);
+   cy.get(login_button).click();
 });
 
 Cypress.Commands.add("invalidCredentialsErrorIsShown", () => {

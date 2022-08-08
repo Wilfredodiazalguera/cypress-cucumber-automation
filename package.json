@@ -4,10 +4,9 @@
    "description": "",
    "main": "index.js",
    "scripts": {
-      "test": "npx cypress open && node cucumber-html-report.js",
       "report": "node cucumber-html-report.js",
-      "testreport": "npx cypress run && npm run report",
-      "testcli": "npx cypress run"
+      "test": "npx cypress open && node cucumber-html-report.js",
+      "testcli": "npx cypress run --browser chrome && node cucumber-html-report.js"
    },
    "keywords": [],
    "author": "",
