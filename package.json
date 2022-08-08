@@ -6,8 +6,8 @@
    "scripts": {
       "test": "npx cypress open && node cucumber-html-report.js",
       "report": "node cucumber-html-report.js",
-      "testreport": "npx cypress run && npm run report",
-      "testcli": "npx cypress run"
+      "testreport": "npx cypress run --browser chrome && npm run report",
+      "testcli": "npx cypress run --browser chrome"
    },
    "keywords": [],
    "author": "",
