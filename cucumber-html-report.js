@@ -4,12 +4,12 @@ report.generate({
    reportPath: "./reports",
    metadata: {
       browser: {
-         name: "Electron 94",
-         version: "Electron 94",
+         name: "Chrome",
+         version: "Latest",
       },
       device: "Windows",
       platform: {
-         name: "Wwindows",
+         name: "Windows",
          version: "2022",
       },
    },
