@@ -19,8 +19,10 @@ Cypress.Commands.add("shoppingCartIconReflectsProductAdded", () => {
    cy.get(shopping_cart_icon).contains("1");
 });
 
-Cypress.Commands.add("addOneProductToCart", () => {
-   cy.get(add_to_cart_button).eq(0).click();
+Cypress.Commands.add("addProductToCart", numberElements => {
+   cy.get(add_to_cart_button)
+      .filter(`:lt(${numberElements})`)
+      .click({ multiple: true });
 });
 
 Cypress.Commands.add("removeButtonIsVisible", () => {

@@ -15,7 +15,7 @@ When("The inventory page loads", () => {
 });
 
 When("I add one item to the cart", () => {
-   cy.addOneProductToCart();
+   cy.addProductToCart(1);
 });
 
 And("Go to cart page from invetory page", () => {
