@@ -5,7 +5,7 @@
    "main": "index.js",
    "scripts": {
       "report": "node cucumber-html-report.js",
-      "test": "npx cypress open && node cucumber-html-report.js",
+      "test": "npx cypress open --e2e --browser chrome && node cucumber-html-report.js",
       "testcli": "npx cypress run --browser chrome && node cucumber-html-report.js"
    },
    "keywords": [],
@@ -14,7 +14,6 @@
    "devDependencies": {
       "@badeball/cypress-cucumber-preprocessor": "^11.5.1",
       "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
-      "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
       "axe-core": "^4.4.3",
       "cypress": "^10.4.0",
       "cypress-axe": "^1.0.0",
