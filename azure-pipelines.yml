@@ -18,5 +18,8 @@ steps:
 
    - script: |
         npm install
+     displayName: "Install dependencies"
+
+   - script: |
         npm run testcli
-     displayName: "npm install and run cypress tests"
+     displayName: "Run Cypress tests"
