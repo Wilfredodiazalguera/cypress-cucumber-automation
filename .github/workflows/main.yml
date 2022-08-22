@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: E2E Cypress Test GitHub Actions
 
 on:
    push:
@@ -12,14 +12,12 @@ jobs:
       steps:
          - uses: actions/checkout@v3
 
-         # install a specific version of Node using
-         - name: Use Node.js V16
+         - name: Install Node.js V16
            uses: actions/setup-node@v3
            with:
               node-version: "16.14.2"
 
-         # install and Run Cypress
-         - name: Running cypress V10
+         - name: Install dependencies and running Cypress
            id: runningcypress
            uses: cypress-io/github-action@v4
            with:

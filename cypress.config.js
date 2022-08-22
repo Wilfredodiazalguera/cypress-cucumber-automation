@@ -1,5 +1,11 @@
 const { defineConfig } = require("cypress");
 
+const createEsbuildPlugin =
+   require("@badeball/cypress-cucumber-preprocessor/esbuild").createEsbuildPlugin;
+const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const addCucumberPreprocessorPlugin =
+   require("@badeball/cypress-cucumber-preprocessor").addCucumberPreprocessorPlugin;
+
 module.exports = defineConfig({
    chromeWebSecurity: false,
    video: false,
@@ -12,12 +18,7 @@ module.exports = defineConfig({
 
          on("file:preprocessor", bundler);
          await addCucumberPreprocessorPlugin(on, config);
-
          return config;
-      },
-
-      setupNodeEvents(on, config) {
-         return require("./cypress/plugins/index.js")(on, config);
       },
 
       specPattern: "cypress/e2e/**/*.feature",
