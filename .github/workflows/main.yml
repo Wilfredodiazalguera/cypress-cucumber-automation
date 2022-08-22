@@ -12,12 +12,12 @@ jobs:
       steps:
          - uses: actions/checkout@v3
 
-         - name: Use Node.js V16
+         - name: Install Node.js V16
            uses: actions/setup-node@v3
            with:
               node-version: "16.14.2"
 
-         - name: Running Cypress
+         - name: Install dependencies and running Cypress
            id: runningcypress
            uses: cypress-io/github-action@v4
            with:

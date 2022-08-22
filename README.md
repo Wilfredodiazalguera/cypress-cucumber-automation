@@ -6,11 +6,11 @@
 ![](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 ![](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 
-# Cypress.io 10 using Cucumber BDD and GitHub Actions
+# Cypress.io 10 using Cucumber BDD, GitHub Actions and Azure DevOps Pipeline
 
 ---
 
-> ### Project made from scratch to perform automated front-end testing using cucumber as an additional framework to use BDD
+> ### Project made from scratch to perform automated front-end testing using cucumber as an additional framework to use BDD and Axe as test accessibility tool, also adding integrations to GitHub Actions and Azure DevOps Pipelines
 
 ---
 
@@ -45,11 +45,11 @@ npm run testcli     // Run tests with Cypress in headless mode with Chrome
 
 > After run the reporter command go to /reports folder and open index.html file
 
-### Reporter on Github actions
+### Reporter on Github actions or Azure DevOps Pipeline
 
 > After run finish go to artifacts and download the reports file, unzip the file and open index.html file
 
-## Patter Design implemented (Cypress.io + Cucumber)
+## Patter Design implemented (Cypress.io + Cucumber) (Pages Model)
 
 ### Methods/functions and Selectors
 
