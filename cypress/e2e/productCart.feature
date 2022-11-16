@@ -5,7 +5,7 @@ Feature: Add product to the Cart
     Background: Im on inventory page
         Given Im on inventory page
 
-    Scenario: Accessibility test on inventory page
+    Scenario: Accessibility test on cart page
         When I add one item to the cart
         And Go to cart page from invetory page
         Then Checks the accessibility
