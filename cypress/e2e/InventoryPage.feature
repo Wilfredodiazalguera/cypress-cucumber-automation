@@ -1,4 +1,4 @@
-Feature: Product Details
+Feature: Inventory page
 
     As a user I want to see the product details
 
