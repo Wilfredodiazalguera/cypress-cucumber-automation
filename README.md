@@ -6,7 +6,7 @@
 ![](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 ![](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 
-# Cypress.io 10 using Cucumber BDD, GitHub Actions and Azure DevOps Pipeline
+# Cypress.io 10 using Cucumber BDD, GitHub Actions, Azure DevOps Pipeline and Reporter _**Windows**_
 
 ---
 
