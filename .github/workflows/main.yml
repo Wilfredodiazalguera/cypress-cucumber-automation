@@ -1,4 +1,4 @@
-name: E2E Cypress Test GitHub Actions
+name: E2E Cypress Test GitHub Actions - Windows VM
 
 on:
    push:
@@ -10,12 +10,13 @@ jobs:
    Cypress-v10-run-tests:
       runs-on: windows-2022
       steps:
-         - uses: actions/checkout@v3
+         - name: Checkout
+           uses: actions/checkout@v3
 
-         - name: Install Node.js V16
+         - name: Install Node.js V19.6.0
            uses: actions/setup-node@v3
            with:
-              node-version: "16.14.2"
+              node-version: "19.6.0"
 
          - name: Install dependencies and running Cypress
            id: runningcypress
@@ -33,23 +34,20 @@ jobs:
            if: always()
            uses: actions/upload-artifact@v3
            with:
-              name: Cucumber Report
+              name: cucumber-report
               path: reports/
 
-         - name: Save Screenshots Report
-           if: failure() && steps.runningcypress.outcome != 'success'
+         - name: Save screenshots if test fails
            uses: actions/upload-artifact@v3
+           if: failure()
            with:
-              name: Screenshots Report
+              name: cypress-screenshots
               path: cypress/screenshots
 
-         - name: Save Video Report
-           if: failure() && steps.runningcypress.outcome != 'success'
+         - name: Save video recording always
            uses: actions/upload-artifact@v3
-           with:
-              name: Video Report
-              path: cypress/videos
-
-         - name: Download all workflow run artifacts
            if: always()
-           uses: actions/download-artifact@v3
+           with:
+              name: cypress-videos
+              path: cypress/videos
+          
